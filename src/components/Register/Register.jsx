@@ -16,7 +16,7 @@ const Register = () => {
                 }
 
                 // create user in the database
-                fetch('http://localhost:3000/users',{
+                fetch('https://smart-deals-server-jwt-three.vercel.app/users',{
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

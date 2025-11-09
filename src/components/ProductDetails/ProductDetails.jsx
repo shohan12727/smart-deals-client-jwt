@@ -11,13 +11,13 @@ const ProductDetails = () => {
     const { user } = use(AuthContext);
 
     useEffect(() => {
-       axios.get(`http://localhost:3000/products/bids/${productId}`)
+       axios.get(`https://smart-deals-server-jwt-three.vercel.app/products/bids/${productId}`)
        .then(data => {
         console.log(data)
        })
     }, [productId])
     // useEffect(() => {
-    //     fetch(`http://localhost:3000/products/bids/${productId}`)
+    //     fetch(`https://smart-deals-server-jwt-three.vercel.app/products/bids/${productId}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log('bids for this product', data)
@@ -46,7 +46,7 @@ const ProductDetails = () => {
             status: 'pending'
         }
 
-        fetch('http://localhost:3000/bids', {
+        fetch('https://smart-deals-server-jwt-three.vercel.app/bids', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

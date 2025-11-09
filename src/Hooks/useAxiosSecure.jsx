@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 const instance = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "https://smart-deals-server-jwt-three.vercel.app/",
 });
 
 const useAxiosSecure = () => {
@@ -13,7 +13,10 @@ const useAxiosSecure = () => {
   useEffect(() => {
     // request interceptor
     const requestIntercepter = instance.interceptors.request.use((config) => {
-      config.headers.authorization = `Bearer ${user.accessToken}`;
+      const token = user.accessToken;
+      if (token) {
+        config.headers.authorization = `Bearer ${token}`;
+      }
       return config;
     });
 

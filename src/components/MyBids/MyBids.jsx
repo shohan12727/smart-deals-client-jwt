@@ -17,7 +17,7 @@ const MyBids = () => {
 
   // useEffect(() => {
   //     if (user?.email) {
-  //         fetch(`http://localhost:3000/bids?email=${user.email}`)
+  //         fetch(`https://smart-deals-server-jwt-three.vercel.app/bids?email=${user.email}`)
   //             .then(res => res.json())
   //             .then(data => {
   //                 console.log(data);
@@ -37,7 +37,7 @@ const MyBids = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/bids/${_id}`, {
+        fetch(`https://smart-deals-server-jwt-three.vercel.app/bids/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
